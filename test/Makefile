@@ -16,7 +16,7 @@ COMPILE_ARGS	  += -D SIM
 
 else
 
-__GATE_TESTBENCH__ := 1
+COCOTB_TEST_FILTER        = gate_level
 
 NETLIST_SRC     = $(PWD)/../runs/wokwi/final/pnl
 PDK_ROOT        ?= ~/.ciel/ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/
@@ -73,3 +73,4 @@ include $(shell cocotb-config --makefiles)/Makefile.sim
 
 waves:
 	gtkwave $(TOPLEVEL).vcd >/dev/null 2>&1 &
+
